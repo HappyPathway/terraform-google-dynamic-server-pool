@@ -60,7 +60,7 @@ resource "google_compute_instance" "alpha_instance" {
     recreate_client         = true
     server_url              = "${var.CHEF_SERVER_URL}"
     user_name               = "${var.CHEF_CLIENT_NAME}"
-    user_key                = "${file("${var.CHEF_VALIDATION_KEY}")}"
+    user_key                = "${var.CHEF_VALIDATION_KEY}"
     fetch_chef_certificates = true
     secret_key              = "${file("~/.chef/encrypted_data_bag_secret")}"
     attributes_json         = "${file("${path.module}/chef_attributes.json")}"
